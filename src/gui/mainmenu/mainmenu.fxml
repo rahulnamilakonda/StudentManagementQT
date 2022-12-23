@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="392.0" prefWidth="416.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.mainmenu.MainMenuController">
+   <children>
+      <Text layoutX="166.0" layoutY="40.0" lineSpacing="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME" underline="true" wrappingWidth="93.8499755859375">
+         <font>
+            <Font name="Georgia" size="17.0" />
+         </font>
+      </Text>
+      <Text layoutX="143.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose your option:" wrappingWidth="153.87493896484375">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Button layoutX="173.0" layoutY="196.0" mnemonicParsing="false" onAction="#sceneStudent" prefHeight="34.0" prefWidth="79.0" text="Student" />
+      <Button layoutX="173.0" layoutY="256.0" mnemonicParsing="false" onAction="#sceneAdmin" prefHeight="34.0" prefWidth="79.0" text="Admin" />
+      <Text layoutX="159.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Powered by Legions">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+   </children>
+</AnchorPane>

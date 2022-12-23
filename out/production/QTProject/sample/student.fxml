@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="392.0" prefWidth="416.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="159.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Powered by Legions">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <Label layoutX="126.0" layoutY="44.0" text="Welcome Student Module">
+         <font>
+            <Font name="Calibri Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="159.0" layoutY="132.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="113.0" text="Register" />
+      <Button layoutX="159.0" layoutY="205.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="113.0" text="Register Course" />
+      <Button layoutX="159.0" layoutY="276.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="113.0" text="Certficate" />
+   </children>
+</AnchorPane>
