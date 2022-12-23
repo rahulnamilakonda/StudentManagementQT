@@ -63,6 +63,9 @@ public class Certificate implements Initializable {
     }
 
     public void payFirstInstallment(ActionEvent actionEvent) {
+        studentsid = Integer.parseInt(sid.getText());
+        studentcid = Integer.parseInt(cid.getText());
+        System.out.println(""+studentsid);
         //Database code
         label.setText("First installment paid");
         label.setStyle("-fx-text-fill: green");
@@ -71,6 +74,9 @@ public class Certificate implements Initializable {
 
     public void paySecondInstallment(ActionEvent actionEvent) {
         //Database code
+        System.out.println(""+studentsid);
+        studentsid = Integer.parseInt(sid.getText());
+        studentcid = Integer.parseInt(cid.getText());
         label.setText("Second installment paid");
         label.setStyle("-fx-text-fill: green");
         label.setVisible(true);
