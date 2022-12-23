@@ -63,5 +63,6 @@
       </font>
    </Button>
    <Button fx:id="back" layoutX="342.0" layoutY="349.0" mnemonicParsing="false" onAction="#goBack" prefHeight="26.0" prefWidth="52.0" text="Back" />
+   <Label fx:id="labelmsg" layoutX="194.0" layoutY="101.0" text="Label" />
 
 </AnchorPane>

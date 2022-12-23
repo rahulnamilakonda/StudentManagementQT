@@ -28,6 +28,7 @@
       <TextField fx:id="sid" layoutX="141.0" layoutY="183.0" onAction="#submitData" />
       <Button fx:id="submit" layoutX="182.0" layoutY="259.0" mnemonicParsing="false" onAction="#submitData" text="Submit" />
       <Button fx:id="back" layoutX="335.0" layoutY="336.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
+      <Label fx:id="labelmsg" layoutX="194.0" layoutY="308.0" text="Label" />
     </children>
 
 </AnchorPane>

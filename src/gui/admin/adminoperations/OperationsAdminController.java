@@ -27,17 +27,22 @@ public class OperationsAdminController implements Initializable {
     private Label label;
 @FXML
     private Button back;
+@FXML
+    private ChoiceBox<String> courseBox;
 
     private Stage stage;
     private Parent root;
     private Scene scene;
+    String[] courses = {"Java", "Python", "HTML", "Java Full Stack", "Python Full Stack"};
     private String []operations={"Average Duration","Students Collected certifactes",
     "students 2 installments paid","students 1 installment paid"};
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     choiceBox.getItems().addAll(operations);
+    courseBox.getItems().addAll(courses);
     label.setVisible(false);
     choiceBox.setOnAction(this::selectOperation);
+    courseBox.setOnAction(this::getCourse);
     }
     public void selectOperation(ActionEvent actionEvent)
     {
@@ -48,9 +53,9 @@ public class OperationsAdminController implements Initializable {
     label.setVisible(true);
 
     }
-    public void getStudents(ActionEvent actionEvent)
+    public void getCourse(ActionEvent actionEvent)
     {
-        String coursename= course.getText();
+        String coursename= courseBox.getValue();
         System.out.println(""+coursename);
         //Database code
         label.setText("success");

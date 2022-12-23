@@ -3,7 +3,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -24,21 +23,19 @@
             <Font name="Calibri Bold" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="course" layoutX="134.0" layoutY="87.0" onAction="#getStudents" />
-      <Button layoutX="167.0" layoutY="121.0" mnemonicParsing="false" onAction="#getStudents" text="GetStudents" />
       <ChoiceBox fx:id="choiceBox" layoutX="133.0" layoutY="184.0" prefWidth="150.0" />
       <Label layoutX="133.0" layoutY="158.0" text="2.Choose your option">
          <font>
             <Font name="Calibri Bold" size="15.0" />
          </font>
       </Label>
-      <Button layoutX="173.0" layoutY="230.0" mnemonicParsing="false" onAction="#selectOperation" text="Submit" />
-      <Label fx:id="label" layoutX="186.0" layoutY="286.0" prefHeight="18.0" prefWidth="44.0" text="Label" textAlignment="CENTER">
+      <Label fx:id="label" layoutX="164.0" layoutY="266.0" prefHeight="18.0" prefWidth="205.0" text="label" textAlignment="JUSTIFY">
          <font>
             <Font name="Calibri Bold" size="16.0" />
          </font>
       </Label>
       <Button fx:id="back" layoutX="341.0" layoutY="336.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
+      <ChoiceBox fx:id="courseBox" layoutX="133.0" layoutY="107.0" prefWidth="150.0" />
     </children>
 
 

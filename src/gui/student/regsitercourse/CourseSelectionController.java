@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -27,6 +28,8 @@ public class CourseSelectionController implements Initializable {
     private TextField sid;
     @FXML
     private Button back;
+    @FXML
+    private Label labelmsg;
 
     private Stage stage;
     private Parent root;
@@ -36,6 +39,7 @@ public class CourseSelectionController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         choiceBox.getItems().addAll(courses);
         choiceBox.setOnAction(this::choiceboxOption);
+        labelmsg.setVisible(false);
     }
 
     public void choiceboxOption(ActionEvent actionEvent)
@@ -49,6 +53,9 @@ public class CourseSelectionController implements Initializable {
         int studentsid = Integer.parseInt(sid.getText());
         //Database code
         System.out.println(""+studentsid);
+        labelmsg.setStyle("-fx-text-fill: green");
+        labelmsg.setText("Submitted Succesfully");
+        labelmsg.setVisible(true);
 
     }
     public void goBack(ActionEvent actionEvent) throws IOException {

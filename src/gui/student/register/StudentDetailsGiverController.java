@@ -3,17 +3,21 @@ package gui.student.register;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class StudentDetailsGiverController {
+public class StudentDetailsGiverController implements Initializable {
     @FXML
     private TextField name;
     @FXML
@@ -26,6 +30,8 @@ public class StudentDetailsGiverController {
     private Button submit;
     @FXML
     private Button back;
+    @FXML
+    private Label labelmsg;
 
     private Stage stage;
     private Parent root;
@@ -42,6 +48,9 @@ public class StudentDetailsGiverController {
         studentage=Integer.parseInt(age.getText());
         //Database code to enter
         System.out.println(""+studentname);
+        labelmsg.setStyle("-fx-text-fill: green;");
+        labelmsg.setText("Submitted Successfully");
+        labelmsg.setVisible(true);
     }
     public void goBack(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../student.fxml"));
@@ -52,5 +61,10 @@ public class StudentDetailsGiverController {
         Image icon = new Image("images/icon.png");
         stage.getIcons().add(icon);
         stage.show();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        labelmsg.setVisible(false);
     }
 }

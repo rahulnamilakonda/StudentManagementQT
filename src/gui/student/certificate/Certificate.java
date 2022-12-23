@@ -28,8 +28,12 @@ public class Certificate implements Initializable {
     @FXML
     private TextField sid;
     @FXML
+    private TextField cid;
+    @FXML
     private Button back;
+
     private int studentsid;
+    private int studentcid;
     private Parent root;
     private Stage stage;
 
@@ -42,14 +46,18 @@ public class Certificate implements Initializable {
 
     public void downloadCertificate(ActionEvent actionEvent) {
         studentsid = Integer.parseInt(sid.getText());
+        studentcid = Integer.parseInt(cid.getText());
         //Database Code
         if (studentsid >= 0) {
-            // Database code to check whether a student can download or not
+            System.out.println("cid: "+studentcid+"sid: "+studentsid);
+            // Database code to check whether a student can download or not;
+            label.setStyle("-fx-text-fill: green");
             label.setText("Your certificate download");
             label.setVisible(true);
 
         } else {
             label.setText("Please complete the course");
+            label.setStyle("-fx-text-fill: red");
         }
 
     }
@@ -57,12 +65,14 @@ public class Certificate implements Initializable {
     public void payFirstInstallment(ActionEvent actionEvent) {
         //Database code
         label.setText("First installment paid");
+        label.setStyle("-fx-text-fill: green");
         label.setVisible(true);
     }
 
     public void paySecondInstallment(ActionEvent actionEvent) {
         //Database code
         label.setText("Second installment paid");
+        label.setStyle("-fx-text-fill: green");
         label.setVisible(true);
     }
     public void goBack(ActionEvent actionEvent) throws IOException {
