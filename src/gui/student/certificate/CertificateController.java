@@ -1,5 +1,6 @@
 package gui.student.certificate;
 
+import Database.Certificate;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,12 +14,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import Database.DownloadCertificate;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Certificate implements Initializable {
+public class CertificateController implements Initializable {
     @FXML
     private final Image image = new Image(getClass().getResourceAsStream("/images/cert.jpg"));
     @FXML
@@ -48,6 +50,8 @@ public class Certificate implements Initializable {
         studentsid = Integer.parseInt(sid.getText());
         studentcid = Integer.parseInt(cid.getText());
         //Database Code
+        DownloadCertificate dd = new DownloadCertificate();
+        dd.certificateDownload(studentsid,studentcid);
         if (studentsid >= 0) {
             System.out.println("cid: "+studentcid+"sid: "+studentsid);
             // Database code to check whether a student can download or not;
@@ -66,7 +70,9 @@ public class Certificate implements Initializable {
         studentsid = Integer.parseInt(sid.getText());
         studentcid = Integer.parseInt(cid.getText());
         System.out.println(""+studentsid);
-        //Database code
+        Certificate cc =new Certificate();
+        cc.IstInstallment(studentsid,studentcid);
+
         label.setText("First installment paid");
         label.setStyle("-fx-text-fill: green");
         label.setVisible(true);
@@ -74,9 +80,12 @@ public class Certificate implements Initializable {
 
     public void paySecondInstallment(ActionEvent actionEvent) {
         //Database code
+
         System.out.println(""+studentsid);
         studentsid = Integer.parseInt(sid.getText());
         studentcid = Integer.parseInt(cid.getText());
+        Certificate cc =new Certificate();
+        cc.IIndInstallment(studentsid,studentcid);
         label.setText("Second installment paid");
         label.setStyle("-fx-text-fill: green");
         label.setVisible(true);

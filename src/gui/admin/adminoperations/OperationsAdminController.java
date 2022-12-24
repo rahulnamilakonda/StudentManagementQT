@@ -13,6 +13,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import Database.JavaJoined;
+import Database.AdminOperations;
 
 import java.io.IOException;
 import java.net.URL;
@@ -33,9 +35,7 @@ public class OperationsAdminController implements Initializable {
     private Stage stage;
     private Parent root;
     private Scene scene;
-    String[] courses = {"Java", "Python", "HTML", "Java Full Stack", "Python Full Stack"};
-    private String []operations={"Average Duration","Students Collected certifactes",
-    "students 2 installments paid","students 1 installment paid"};
+    String[] courses = {"JAVA", "PYTHON", "HTML", "JAVA FULL STACK", "PYTHON FULL STACK"};;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     choiceBox.getItems().addAll(operations);
@@ -44,12 +44,18 @@ public class OperationsAdminController implements Initializable {
     choiceBox.setOnAction(this::selectOperation);
     courseBox.setOnAction(this::getCourse);
     }
+    private String []operations={"Average Duration","Students Collected certifactes",
+            "students 2 installments paid","students 1 installment paid"};
     public void selectOperation(ActionEvent actionEvent)
     {
     String operation=choiceBox.getValue();
     System.out.println(""+operation);
     // Database Code
-    label.setText("Number");
+        AdminOperations ao = new AdminOperations();
+        int n = ao.operations(operation);
+
+    label.setText("The Count is "+n);
+
     label.setVisible(true);
 
     }
@@ -58,6 +64,10 @@ public class OperationsAdminController implements Initializable {
         String coursename= courseBox.getValue();
         System.out.println(""+coursename);
         //Database code
+
+        JavaJoined jd = new JavaJoined();
+        jd.getCourseJoinedNames(coursename);
+        label.setStyle("-fx-text-fill: green");
         label.setText("success");
         label.setVisible(true);
     }

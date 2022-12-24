@@ -1,5 +1,6 @@
 package gui.student.regsitercourse;
 
+import Database.RegisterCourse;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +20,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class CourseSelectionController implements Initializable {
-    String[] courses = {"Java", "Python", "HTML", "Java Full Stack", "Python Full Stack"};
+    String[] courses = {"JAVA", "PYTHON", "HTML", "JAVA FULL STACK", "PYTHON FULL STACK"};
     @FXML
     private ChoiceBox<String> choiceBox;
     @FXML
@@ -34,6 +35,7 @@ public class CourseSelectionController implements Initializable {
     private Stage stage;
     private Parent root;
     private Scene scene;
+    private String value;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -44,7 +46,7 @@ public class CourseSelectionController implements Initializable {
 
     public void choiceboxOption(ActionEvent actionEvent)
     {
-        String value = choiceBox.getValue();
+        value = choiceBox.getValue();
         //Database code
         System.out.println("" + value);
     }
@@ -52,6 +54,9 @@ public class CourseSelectionController implements Initializable {
 
         int studentsid = Integer.parseInt(sid.getText());
         //Database code
+        RegisterCourse rc = new RegisterCourse();
+        rc.enrollCourse(studentsid,value);
+        System.out.println(""+studentsid);
         System.out.println(""+studentsid);
         labelmsg.setStyle("-fx-text-fill: green");
         labelmsg.setText("Submitted Succesfully");

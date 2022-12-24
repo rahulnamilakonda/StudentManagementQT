@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import Database.StudentRegistration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -47,9 +48,12 @@ public class StudentDetailsGiverController implements Initializable {
         studentaddress=address.getText();
         studentage=Integer.parseInt(age.getText());
         //Database code to enter
+        StudentRegistration sr = new StudentRegistration();
+        int id =  sr.createStudent(studentname,studentcontact,studentaddress,studentage);
+        System.out.println("data inserted");
         System.out.println(""+studentname);
         labelmsg.setStyle("-fx-text-fill: green;");
-        labelmsg.setText("Submitted Successfully");
+        labelmsg.setText("Submitted Successfully your id is : "+id);
         labelmsg.setVisible(true);
     }
     public void goBack(ActionEvent actionEvent) throws IOException {
